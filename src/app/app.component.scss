@@ -4,6 +4,7 @@
   justify-content: center;
   width: 100%;
   .card-list{
+    flex-wrap: wrap;
     display: flex;
     justify-content: center;
     align-self: center;
