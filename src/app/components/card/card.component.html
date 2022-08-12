@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" [@delete]="deleted ? 'non-deleted':'deleted'">
   <div class="close-button" (click)="emitCardDeletion(card.id)">
     <img src="http://aai-frontend-interview-mock-data.s3-website-sa-east-1.amazonaws.com/assets/close.svg">
   </div>
