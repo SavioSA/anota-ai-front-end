@@ -1,7 +1,11 @@
-import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  TestBed,
+  fakeAsync,
+  tick,
+} from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardComponent } from './card.component';
-
 
 describe('CardComponent', () => {
   let component: CardComponent;
@@ -10,7 +14,7 @@ describe('CardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [CardComponent],
-      imports:[BrowserAnimationsModule]
+      imports: [BrowserAnimationsModule],
     }).compileComponents();
   });
 
@@ -23,7 +27,7 @@ describe('CardComponent', () => {
       description: 'teste',
       type: '1',
       img: 'http://aai-frontend-interview-mock-data.s3-website-sa-east-1.amazonaw.com/teste/Test-front-anota-ai.webm',
-    }
+    };
     fixture.detectChanges();
   });
 
@@ -33,7 +37,7 @@ describe('CardComponent', () => {
     const spy = spyOn(component.cardDeletion, 'emit');
     component.emitCardDeletion(1);
     expect(component.deleted).toEqual(true);
-    tick(400)
+    tick(400);
     expect(spy).toHaveBeenCalledWith(1);
   }));
 
