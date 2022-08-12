@@ -11,8 +11,7 @@ export class InputSearchComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  emitSearch(event: Event) {
-    const target = event.target as HTMLInputElement;
-    this.textSearch.emit(target.value);
+  emitSearch(text: string) {
+    this.textSearch.emit(text);
   }
 }
