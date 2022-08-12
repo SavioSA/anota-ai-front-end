@@ -5,32 +5,39 @@ section.search-container{
   margin-top: 4.5rem;
 
   input{
+    padding-left: 1rem;
+    padding-right: 1rem;
     height: 2rem;
     width: 99%;
+    border: 2px solid #0000001a;
   }
 
   input:focus {
     outline: none;
     border: 2px solid #64ccfc;
-    border-radius: .2rem;
+    border-radius: .3rem;
   }
 
   input:focus + .loupe-container{
-    border-left: 2px solid #64ccfc;
+    border: 2px solid #64ccfc;
+    border-top: 2px solid #64ccfc;
+    border-bottom: 2px solid #64ccfc;
   }
 
   .input-container{
-    position: relative;
+    display: flex;
     width: 90%;
     .loupe-container{
-      position: absolute;
-      right: 0;
-      top: 0;
+      margin-left: - .1rem;
+      border-bottom-right-radius: .3rem;
+      border-top-right-radius: .3rem;
+      border: 2px solid #0000001a;
+      background-color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 2.2rem;
-      height: 2.2rem;
+      width: 2.1rem;
+      height: 2.1rem;
       img{
         width: 1rem;
         height: 1rem;
