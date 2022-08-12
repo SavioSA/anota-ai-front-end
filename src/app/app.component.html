@@ -2,6 +2,6 @@
 <section class="main">
   <app-input-search (textSearch)="fillSearch($event)" ></app-input-search>
 <section class="card-list">
-  <app-card *ngFor="let card of showCards" [card]="card"></app-card>
+  <app-card *ngFor="let card of showCards" [card]="card" (cardDeletion)="removeCard($event)" ></app-card>
 </section>
 

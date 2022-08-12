@@ -32,4 +32,9 @@ export class AppComponent implements OnInit {
     })
   }
 
+  removeCard(cardId: number) {
+    this.cards = this.cards.filter(card => card.id != cardId)
+    this.showCards = this.showCards.filter(card => card.id != cardId)
+  }
+
 }
