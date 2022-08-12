@@ -1,4 +1,10 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import CardInterface from 'src/app/interfaces/card.interface';
 
@@ -8,26 +14,29 @@ import CardInterface from 'src/app/interfaces/card.interface';
   styleUrls: ['./card.component.scss'],
   animations: [
     trigger('delete', [
-      state('deleted', style({
-        opacity:'1'
-      })),
-      state('non-deleted', style({
-        opacity:'0'
-      })),
-      transition('non-deleted => deleted', [
-        animate('1s')
-      ]),
-    ])
-  ]
+      state(
+        'deleted',
+        style({
+          opacity: '1',
+        })
+      ),
+      state(
+        'non-deleted',
+        style({
+          opacity: '0',
+        })
+      ),
+      transition('non-deleted => deleted', [animate('1s')]),
+    ]),
+  ],
 })
 export class CardComponent implements OnInit {
   @Output() cardDeletion = new EventEmitter<number>();
   @Input() card!: CardInterface;
   deleted = false;
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   emitCardDeletion(cardNumber: number) {
     this.deleted = true;
@@ -35,5 +44,4 @@ export class CardComponent implements OnInit {
       this.cardDeletion.emit(cardNumber);
     }, 300);
   }
-
 }

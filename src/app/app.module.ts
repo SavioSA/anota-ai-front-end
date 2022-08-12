@@ -7,7 +7,6 @@ import { CardComponent } from './components/card/card.component';
 import { HeaderComponent } from './components/header/header.component';
 import { InputSearchComponent } from './components/input-search/input-search.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,12 +14,8 @@ import { InputSearchComponent } from './components/input-search/input-search.com
     InputSearchComponent,
     CardComponent,
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    BrowserAnimationsModule
-  ],
+  imports: [BrowserModule, HttpClientModule, BrowserAnimationsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

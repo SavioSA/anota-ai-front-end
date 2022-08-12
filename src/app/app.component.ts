@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   cards: CardInterface[] = [];
   showCards: CardInterface[] = [];
 
-  constructor(public cardService: CardService) { }
+  constructor(public cardService: CardService) {}
 
   ngOnInit(): void {
     this.getCards();
@@ -22,19 +22,20 @@ export class AppComponent implements OnInit {
     this.cardService.getCards().subscribe({
       next: (cards) => {
         this.cards = this.showCards = cards;
-      }
-    })
+      },
+    });
   }
 
   fillSearch(textSearch: string) {
     this.showCards = this.cards.filter((card) => {
-      return card.title.includes(textSearch) || card.description.includes(textSearch);
-    })
+      return (
+        card.title.includes(textSearch) || card.description.includes(textSearch)
+      );
+    });
   }
 
   removeCard(cardId: number) {
-    this.cards = this.cards.filter(card => card.id != cardId)
-    this.showCards = this.showCards.filter(card => card.id != cardId)
+    this.cards = this.cards.filter((card) => card.id != cardId);
+    this.showCards = this.showCards.filter((card) => card.id != cardId);
   }
-
 }
