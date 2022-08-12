@@ -1,6 +1,6 @@
 <section class="search-container">
   <div class="input-container">
-    <input type="text">
+    <input (keyup)="emitSearch($event)" type="text">
     <div class="loupe-container">
       <img src="/assets/loupe.png" alt="">
     </div>
