@@ -1,6 +1,6 @@
 import {
   HttpClientTestingModule,
-  HttpTestingController,
+  HttpTestingController
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { CardService } from './card.service';
@@ -30,7 +30,7 @@ describe('CardService', () => {
     service.getCards().subscribe({
       next: (val) => {
         expect(val).toEqual([
-          { ...card, type: 'Paisagem' },
+          { type: 'Paisagem', ...card },
           { type: 'Flor', ...card },
           { type: 'Pizza', ...card },
         ]);
@@ -44,16 +44,16 @@ describe('CardService', () => {
     req.flush(
       [
         {
-          ...card,
           type: '1',
+          ...card,
         },
         {
-          ...card,
           type: '2',
+          ...card,
         },
         {
-          ...card,
           type: '3',
+          ...card,
         },
       ],
       { status: 200, statusText: 'Ok' }
