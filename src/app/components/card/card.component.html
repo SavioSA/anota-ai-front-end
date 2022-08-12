@@ -1,12 +1,19 @@
 <div class="card">
   <div class="close-button">
-    <img src="http://aai-frontend-interview-mock-data.s3-website-sa-east-1.amazonaws.com/assets/close.svg" alt="">
+    <img src="http://aai-frontend-interview-mock-data.s3-website-sa-east-1.amazonaws.com/assets/close.svg">
   </div>
-  <img src="http://aai-frontend-interview-mock-data.s3-website-sa-east-1.amazonaws.com/assets/img-test-02.jpg" alt="">
+  <img [src]="card.img">
+  <div class="type-container" [ngClass]="{
+    'pizza' : card.type === 'Pizza',
+    'landscape' : card.type === 'Paisagem',
+    'flower' : card.type === 'Flor'
+  }">
+    {{card.type}}
+  </div>
   <div class="title-container">
-    Árvore
+    {{card.title}}
   </div>
   <div class="description-container">
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    {{card.description}}
   </div>
 </div>

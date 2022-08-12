@@ -1,4 +1,5 @@
 div.card{
+  position: relative;
   background-color: #fff;
   width: 195px;
   box-shadow: 2px 2px 2px 1px #dcdcdc;
@@ -13,6 +14,7 @@ div.card{
       height: 1rem;
     }
 
+    border: 2px solid #dcdcdc;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,6 +32,30 @@ div.card{
     border-top-left-radius: .5rem;
     width: 100%;
     height: 45%;
+  }
+
+  .type-container {
+    position: absolute;
+    border-top-right-radius: .2rem;
+    border-top-left-radius: .2rem;
+    border-bottom-left-radius: .2rem;
+    border-bottom-right-radius: .2rem;
+    right: .3rem;
+    bottom: 10rem;
+    color: #fff;
+    font-size: 8pt;
+    font-weight: bold;
+    padding: .1rem .2rem .1rem .2rem;
+  }
+
+  .pizza{
+    background-color: #8c8924;
+  }
+  .landscape{
+    background-color: #045fe9;
+  }
+  .flower{
+    background-color: #f90748;
   }
 
   .title-container{
@@ -50,4 +76,8 @@ div.card{
     overflow: hidden;
     text-overflow: ellipsis;
   }
+}
+
+div.card:hover {
+  animation: grow 8s ease-in infinite;
 }
