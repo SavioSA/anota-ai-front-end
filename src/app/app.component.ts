@@ -8,8 +8,9 @@ import { CardService } from './services/card.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'anota-ai-front-end';
+  title = 'Anota aí - Front-end';
   cards: CardInterface[] = [];
+  showCards: CardInterface[] = [];
 
   constructor(public cardService: CardService) { }
 
@@ -20,10 +21,14 @@ export class AppComponent implements OnInit {
   getCards() {
     this.cardService.getCards().subscribe({
       next: (cards) => {
-        console.log(cards);
-
-        this.cards = cards;
+        this.cards = this.showCards = cards;
       }
+    })
+  }
+
+  fillSearch(textSearch: string) {
+    this.showCards = this.cards.filter((card) => {
+      return card.title.includes(textSearch) || card.description.includes(textSearch);
     })
   }
 
